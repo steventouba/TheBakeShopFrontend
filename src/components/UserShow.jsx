@@ -6,7 +6,7 @@ function UserShow(props) {
   const { resource } = props.location.state;
 
   useEffect(() => {
-    Axios.get(resource)
+    Axios.get('resource')
       .then((res) => setUser(res.data))
       .catch((console.log))
   },[resource])
