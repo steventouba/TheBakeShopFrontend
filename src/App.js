@@ -3,6 +3,8 @@ import ProductIndex from './components/ProductIndex';
 import ProductShow from './components/ProductShow';
 import UserIndex from './components/UserIndex';
 import UserShow from "./components/UserShow";
+import SignupForm from "./components/SignUpForm";
+
 import './App.css';
 
 function App() {
@@ -13,7 +15,7 @@ function App() {
         <Link to='/users'>Sellers</Link>
       </nav>
       <Switch>
-        <Route path="/" exact component={ProductIndex} />
+        <Route path="/" exact component={SignupForm} />
         <Route path="/products/:id" exact component={ProductShow} />
         <Route path="/users/:id" exact component={UserShow} />
         <Route path="/users" exact component={UserIndex} />
