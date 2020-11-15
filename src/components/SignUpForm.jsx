@@ -28,7 +28,7 @@ class SignupForm extends React.Component {
     e.preventDefault();
     const data = Object.assign({}, this.state)
     Axios.post("/users/register", data)
-      .then((res) => console.log(res.data))
+      .then((res) => console.log(res))
       .catch(console.log)
   }
 
@@ -37,7 +37,7 @@ class SignupForm extends React.Component {
     const { firstName, lastName, email, password, matchingPassword } = this.state;
 
     return (
-      <form onSubmit={this.handleSumbit}>
+      <form onSubmit={this.handleSubmit}>
         <label htmlFor="fname">First name:</label>
         <input
           type="text"
@@ -47,6 +47,7 @@ class SignupForm extends React.Component {
           value={firstName}
           onChange={this.handleChange("firstName")}
         />
+        <br/>
         <label htmlFor="lname">Last name:</label>
         <input
           type="text"
@@ -55,6 +56,7 @@ class SignupForm extends React.Component {
           value={lastName}
           onChange={this.handleChange("lastName")}
         />
+        <br/>
         <label htmlFor="email"></label>
         <input
           type="email"
@@ -63,6 +65,7 @@ class SignupForm extends React.Component {
           value={email}
           onChange={this.handleChange("email")}
         />
+        <br/>
         <label htmlFor="password">Password:</label>
         <input
           type="password"
@@ -71,6 +74,7 @@ class SignupForm extends React.Component {
           value={password}
           onChange={this.handleChange("password")}
         />
+        <br/>
         <label htmlFor="password-match">Confirm Password:</label>
         <input
           type="password"
@@ -79,7 +83,8 @@ class SignupForm extends React.Component {
           value={matchingPassword}
           onChange={this.handleChange("matchingPassword")}
         />
-        <button type="submit" onClick={this.handleSubmit}>Sign up</button>
+        <br/>
+        <button type="submit" value="submit">Sign up</button>
       </form>
     )
   }
