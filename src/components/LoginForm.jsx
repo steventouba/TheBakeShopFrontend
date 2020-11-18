@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Axios from 'axios';
 import { useHistory } from 'react-router-dom';
+import AuthContext from '../context';
 
 function LogInForm(props) {
+  const { setAuth } = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const history = useHistory();
@@ -13,8 +15,8 @@ function LogInForm(props) {
     Axios.post("/users/login", data)
       .then(
         res => {
-          Axios.defaults.headers.common['Authorization'] = "Bearer: " + res.data
-          localStorage.setItem("savedToken", res.data)
+          localStorage.setItem("savedToken", "Bearer: " + res.data.jwt)
+          setAuth()
         })
       .then(history.push("/"))
       .catch(console.log)

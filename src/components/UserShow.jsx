@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
+import ProductCreateForm from './ProductCreateForm';
 
 function UserShow(props) {
   const [user, setUser] = useState(null);
@@ -22,6 +23,7 @@ function UserShow(props) {
   return (
     <section>
       {component}
+      <ProductCreateForm />
     </section>
   )
 }
