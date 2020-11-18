@@ -1,7 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
 
-
 class SignupForm extends React.Component {
   constructor(props) {
     super(props)

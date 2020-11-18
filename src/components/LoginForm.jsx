@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
-
 function LogInForm(props) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -12,7 +11,11 @@ function LogInForm(props) {
     e.preventDefault();
     const data = { username: email, password, }
     Axios.post("/users/login", data)
-      .then(res => Axios.defaults.headers.common['Authorization'] = res.data)
+      .then(
+        res => {
+          Axios.defaults.headers.common['Authorization'] = "Bearer: " + res.data
+          localStorage.setItem("savedToken", res.data)
+        })
       .then(history.push("/"))
       .catch(console.log)
   };
