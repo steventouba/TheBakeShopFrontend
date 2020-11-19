@@ -25,8 +25,7 @@ function LogInForm(props) {
 
   return (
     <form onSubmit={handleSubmit}>
-   
-      <label htmlFor="email"></label>
+      <label htmlFor="email">Email:</label>
       <input
         type="email"
         id="email"

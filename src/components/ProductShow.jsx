@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 
-function ProductShow({location, match, history}) {
+function ProductShow({ location, match }) {
   const { state } = location;
   const [product, setProduct] = useState(null);
 
@@ -16,16 +16,25 @@ function ProductShow({location, match, history}) {
     }
   }, [state, match.params])
 
-  const component = product === null ? <div>Loading</div>
-    : <div>
-      <div>{product.name}</div>
-      <div>{product.description}</div>
-    </div>;
+  const component = product === null ? <div>Loading</div> :
+    <main className="container">
+      <div className="left-column">
+        product image 
+      </div>
+      <div className="right-column">
+        <div className="product-description">
+          <span>Category</span>
+          <h1>{product.name}</h1>
+          <p>{product.description}</p>
+        </div>
+        <div className="product-price">
+          <span>product price</span>
+          <button className="cart-btn">Add to cart</button>
+        </div>
+      </div>
+    </main>
 
-  return (
-    <section>
-      {component}
-    </section>
-  )
-}
+  return component
+};
+
 export default ProductShow;

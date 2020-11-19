@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import Axios from 'axios';
 
 function ProductIndex() {
@@ -9,9 +10,18 @@ function ProductIndex() {
       .then((res) => setProducts(res.data))
   },[])
 
-  const component = products === null ? <div>Loading</div>
-    : <ul>
-      { products.map((product) => <li key={product.id}>{product.name}</li>) }
+  const component = products === null ? <div>Loading</div> : 
+    <ul className="product-card-container">
+      {
+        products.map(product => (
+          <li key={product.id} className="product-card">
+            <Link to={`/products/${product.id}`}>
+              <img src="" alt="Image goes here"/>
+               <h3>{product.name}</h3>
+            </Link>
+          </li>
+        ))
+      }
     </ul>
 
     return(

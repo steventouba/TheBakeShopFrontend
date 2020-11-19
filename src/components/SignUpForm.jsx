@@ -56,7 +56,7 @@ class SignupForm extends React.Component {
           onChange={this.handleChange("lastName")}
         />
         <br/>
-        <label htmlFor="email"></label>
+        <label htmlFor="email">Email:</label>
         <input
           type="email"
           id="email"

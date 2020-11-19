@@ -7,8 +7,6 @@ import SignupForm from "./components/SignUpForm";
 import LogInForm from "./components/LoginForm";
 import Navbar from "./components/NavBar";
 import NoMatch from './components/NoMatch';
-import './App.css';
-
 
 function App() {
   return (

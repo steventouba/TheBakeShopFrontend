@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import ProductShow from './ProductShow';
+import React from 'react';
 import ProductIndex from './ProductIndex';
+import WithAuth from '../HOCs/WithAuth';
 
 function HomePage() {
 
@@ -8,5 +8,6 @@ function HomePage() {
     <ProductIndex />
   )
 }
+
 
 export default HomePage;
