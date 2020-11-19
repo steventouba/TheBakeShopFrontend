@@ -32,8 +32,7 @@ function ProductCreateForm() {
         onChange={e => setName(e.target.value)}
       />
       <label htmlFor="product-description"></label>
-      <input
-        type="text-area"
+      <textarea
         name="product-description"
         id="product-description"
         value={description}

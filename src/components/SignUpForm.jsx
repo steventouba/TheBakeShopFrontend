@@ -1,5 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
+import styles from '../stylesheets/Form.module.css';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -36,55 +37,64 @@ class SignupForm extends React.Component {
     const { firstName, lastName, email, password, matchingPassword } = this.state;
 
     return (
-      <form onSubmit={this.handleSubmit}>
-        <label htmlFor="fname">First name:</label>
-        <input
-          type="text"
-          id="fname"
-          name="fname"
-          placeholder="John"
-          value={firstName}
-          onChange={this.handleChange("firstName")}
-        />
-        <br/>
-        <label htmlFor="lname">Last name:</label>
-        <input
-          type="text"
-          id="lname"
-          name="lname"
-          value={lastName}
-          onChange={this.handleChange("lastName")}
-        />
-        <br/>
-        <label htmlFor="email">Email:</label>
-        <input
-          type="email"
-          id="email"
-          name="email"
-          value={email}
-          onChange={this.handleChange("email")}
-        />
-        <br/>
-        <label htmlFor="password">Password:</label>
-        <input
-          type="password"
-          id="password"
-          name="password"
-          value={password}
-          onChange={this.handleChange("password")}
-        />
-        <br/>
-        <label htmlFor="password-match">Confirm Password:</label>
-        <input
-          type="password"
-          id="password-match"
-          name="password-match"
-          value={matchingPassword}
-          onChange={this.handleChange("matchingPassword")}
-        />
-        <br/>
-        <button type="submit" value="submit">Sign up</button>
-      </form>
+      <main className={styles.wrapper}>
+        <div className={styles.card}>
+          <form onSubmit={this.handleSubmit} className={styles.container}>
+            <div className={styles.group}>
+              <label htmlFor="fname">First name</label>
+              <input
+                type="text"
+                id="fname"
+                name="fname"
+                value={firstName}
+                onChange={this.handleChange("firstName")}
+              />
+            </div>
+            <div className={styles.group}>
+              <label htmlFor="lname">Last name</label>
+              <input
+                type="text"
+                id="lname"
+                name="lname"
+                value={lastName}
+                onChange={this.handleChange("lastName")}
+              />
+            </div>
+            <div className={styles.group}>
+              <label htmlFor="email">Email</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                value={email}
+                onChange={this.handleChange("email")}
+              />
+            </div>
+            <div className={styles.group}>
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={password}
+                onChange={this.handleChange("password")}
+              />
+            </div>
+            <div className={styles.group}>
+              <label htmlFor="password-match">Confirm Password</label>
+              <input
+                type="password"
+                id="password-match"
+                name="password-match"
+                value={matchingPassword}
+                onChange={this.handleChange("matchingPassword")}
+              />
+            </div>
+            <button type="submit" value="submit">Sign up</button>
+          </form>
+
+        </div>
+      </main>
     )
   }
 }

@@ -6,7 +6,6 @@ function UserShow(props) {
   const [user, setUser] = useState(null);
   const { resourceUrl } = props.location.state;
 
-  debugger
   useEffect(() => {
     Axios.get(resourceUrl)
       .then((res) => setUser(res.data))

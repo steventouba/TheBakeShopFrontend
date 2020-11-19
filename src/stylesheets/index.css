@@ -14,33 +14,9 @@ time, mark, audio, video {
 	margin: 0;
 	padding: 0;
 	border: 0;
-	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
 	box-sizing: border-box;
-}
-/* HTML5 display-role reset for older browsers */
-article, aside, details, figcaption, figure, 
-footer, header, hgroup, menu, nav, section {
-	display: block;
-}
-body {
-	line-height: 1;
-}
-ol, ul {
-	list-style: none;
-}
-blockquote, q {
-	quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-	content: '';
-	content: none;
-}
-table {
-	border-collapse: collapse;
-	border-spacing: 0;
 }
 
 body {
@@ -48,32 +24,32 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+	-moz-osx-font-smoothing: grayscale;
+	overflow: hidden;
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
 /* End reset */
 /*Start Global styles */
 
-a {
-  background-color: red;
-  color: white;
-  padding: 0.5em 0.5em;
-  text-decoration: none;
+html, body, #root, #root>div {
+	height: 100vh;
+	width: 100vw;
 }
 
-a:hover {
-	background-color: #555;
-	outline: 1px black solid;
+.App {
+	position: relative;
 }
 
-a:active {
-  background-color: black;
+main {
+	height: 100%;
 }
 
-a:visited {
-  background-color: #ccc;
+html {
+  font-size: calc(0.85em + 0.5vw);
 }
+
