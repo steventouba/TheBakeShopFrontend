@@ -1,16 +1,20 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
 
-function ProductShow(props) {
-  debugger
-  const { location } = props;
-  const [product, setProduct] = useState(location.state.product);
+function ProductShow({location, match, history}) {
+  const { state } = location;
+  const [product, setProduct] = useState(null);
 
-  // useEffect(() => {
-  //   Axios.get("/products/1")
-  //     .then((res) => setProduct(res.data))
-  //     .catch((console.log))
-  // }, [])
+  useEffect(() => {
+    if (state != undefined) {
+      setProduct(state.product)
+    } else {
+      const { id } = match.params;
+      Axios.get(`/products/${id}`)
+        .then((res) => setProduct(res.data))
+        .catch((console.log))
+    }
+  }, [state, match.params])
 
   const component = product === null ? <div>Loading</div>
     : <div>

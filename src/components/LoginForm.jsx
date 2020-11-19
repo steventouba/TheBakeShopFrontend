@@ -1,7 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import AuthContext from '../context';
+import AuthContext from '../context/authContext';
 
 function LogInForm(props) {
   const { setAuth } = useContext(AuthContext);
@@ -15,8 +15,9 @@ function LogInForm(props) {
     Axios.post("/users/login", data)
       .then(
         res => {
-          localStorage.setItem("savedToken", "Bearer: " + res.data)
-          setAuth()
+          const {data, headers } = res;
+          localStorage.setItem("savedToken", headers.authorization)
+          setAuth(data)
         })
       .then(history.push("/"))
       .catch(console.log)

@@ -13,7 +13,7 @@ function UserIndex() {
   const component = users === null ? <div>Loading</div>
     : <ul>
       {users.map((user) => (
-        <li>
+        <li key={user.id}>
           <Link to={{
             pathname: `/users/${user.id}`,
             state: {

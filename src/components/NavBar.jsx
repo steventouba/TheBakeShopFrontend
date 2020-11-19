@@ -1,16 +1,23 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import AuthContext from '../context';
+import AuthContext from '../context/authContext';
 
 function Navbar() {
-  const { isAuthenticated } = useContext(AuthContext);
+  const { userDetails, setAuth } = useContext(AuthContext);
+  const {isAuthenticated, firstName } = userDetails;
+
+  const logout = () => { 
+    localStorage.removeItem('savedToken');
+    setAuth()
+  };
 
   if (isAuthenticated) {
     return (
       <nav>
         <span>
-          welcome
+          {`Hello ${firstName}`}
         </span>
+        <button onClick={logout}>Sign out</button>
         <Link to='/'>Products</Link>
         <Link to='/users'>Sellers</Link>
       </nav>

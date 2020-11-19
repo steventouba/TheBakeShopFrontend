@@ -1,20 +1,19 @@
 import React, { useEffect, useState } from 'react';
-import AuthContext from './index';
+import AuthContext from './authContext';
 
 function AuthProvider({ children }) {
-const [isAuthenticated, setAuthenticated] = useState(false);
+  const [userDetails, setUserDetails] = useState({isAuthenticated: false, firstName: ''});
   
-  const setAuth = () => {
+  const setAuth = (firstName = '') => {
     if (localStorage.getItem('savedToken')) {
-      setAuthenticated(true);
+      setUserDetails({isAuthenticated: true, firstName});
     } else {
-      setAuthenticated(false);
+      setUserDetails({isAuthenticated: false, firstName});
     }
   };
   
   const checkAuth = useEffect(() => setAuth(), [])
-
-  const context = { isAuthenticated, setAuth };
+  const context = { userDetails, setAuth };
 
   return (
     <AuthContext.Provider value={ context } >

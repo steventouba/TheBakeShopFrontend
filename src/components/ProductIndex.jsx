@@ -11,7 +11,7 @@ function ProductIndex() {
 
   const component = products === null ? <div>Loading</div>
     : <ul>
-      { products.map((product) => <li>{product.name}</li>) }
+      { products.map((product) => <li key={product.id}>{product.name}</li>) }
     </ul>
 
     return(
