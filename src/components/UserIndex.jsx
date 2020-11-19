@@ -15,9 +15,9 @@ function UserIndex() {
       {users.map((user) => (
         <li>
           <Link to={{
-            pathname: `users/${user.id}`,
+            pathname: `/users/${user.id}`,
             state: {
-              resource: user.self,
+              resourceUrl: user.resources.self,
             }
           }}>
             {user.firstName + " " + user.lastName}

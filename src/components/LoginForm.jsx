@@ -15,7 +15,7 @@ function LogInForm(props) {
     Axios.post("/users/login", data)
       .then(
         res => {
-          localStorage.setItem("savedToken", "Bearer: " + res.data.jwt)
+          localStorage.setItem("savedToken", "Bearer: " + res.data)
           setAuth()
         })
       .then(history.push("/"))

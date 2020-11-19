@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
+import { Redirect } from 'react-router-dom';
 
 function ProductCreateForm() {
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
+  const [product, setProduct] = useState(null);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -14,10 +16,11 @@ function ProductCreateForm() {
     })
 
     instance.post('/products/create', data)
-      .then(res => console.log(res.data))
+      .then(res => setProduct(res.data))
       .catch(console.log)
   };
 
+  if (product != null) { return <Redirect to={{pathname: `/products/${product.id}`, state: {product}}}/>} 
   return (
     <form onSubmit={handleSubmit}>
       <label htmlFor="product-name"></label>

@@ -4,13 +4,14 @@ import ProductCreateForm from './ProductCreateForm';
 
 function UserShow(props) {
   const [user, setUser] = useState(null);
-  const { resource } = props.location.state;
+  const { resourceUrl } = props.location.state;
 
+  debugger
   useEffect(() => {
-    Axios.get('resource')
+    Axios.get(resourceUrl)
       .then((res) => setUser(res.data))
       .catch((console.log))
-  },[resource])
+  },[])
 
   const component = user === null ? <div>Loading</div>
     : <div>

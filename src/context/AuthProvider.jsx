@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import AuthContext from './index';
 
 function AuthProvider({ children }) {
@@ -10,9 +10,11 @@ const [isAuthenticated, setAuthenticated] = useState(false);
     } else {
       setAuthenticated(false);
     }
-  }
+  };
+  
+  const checkAuth = useEffect(() => setAuth(), [])
 
-  const context = { isAuthenticated, setAuth }
+  const context = { isAuthenticated, setAuth };
 
   return (
     <AuthContext.Provider value={ context } >
