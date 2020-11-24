@@ -30,10 +30,13 @@
 .group {
   display:grid;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  padding: 0.2em 0.3em;
+  align-items: baseline;
+  padding: 0.2em 0.3em 0.2em 0;
+  width: 100%;
 }
 
 .group > label {
+  margin-left: 3em;
   text-align: left;
 }
 

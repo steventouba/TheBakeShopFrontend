@@ -28,6 +28,11 @@ body {
 	overflow: hidden;
 }
 
+li {
+	text-decoration: none;
+	list-style: none;
+}
+
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
@@ -47,9 +52,23 @@ html, body, #root, #root>div {
 
 main {
 	height: 100%;
+	margin: 0 1em;
 }
 
 html {
   font-size: calc(0.85em + 0.5vw);
 }
 
+input {
+	box-sizing: border-box;
+	width: 100%;
+	padding: 12px 20px;
+	margin: 8px 0;
+	border: 2px solid black;
+  border-radius: 4px;
+}
+
+input:focus {
+	background-color: lightblue;
+	border: 3px solid #555;
+}

@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Axios from 'axios';
+import styles from '../stylesheets/ProductCard.module.css';
 
 function ProductIndex() {
   const [products, setProducts] = useState(null);
@@ -11,10 +12,10 @@ function ProductIndex() {
   },[])
 
   const component = products === null ? <div>Loading</div> : 
-    <ul className="product-card-container">
+    <ul className={styles.gallery__list}>
       {
         products.map(product => (
-          <li key={product.id} className="product-card">
+          <li key={product.id} className={styles.card}>
             <Link to={`/products/${product.id}`}>
               <img src="" alt="Image goes here"/>
                <h3>{product.name}</h3>
@@ -25,9 +26,9 @@ function ProductIndex() {
     </ul>
 
     return(
-      <section>
+      <main>
         {component}
-      </section>
+      </main>
     )
 }
 export default ProductIndex;
