@@ -1,6 +1,6 @@
 import React from 'react';
 import Axios from 'axios';
-import styles from '../stylesheets/Form.module.css';
+import styles from '../../stylesheets/Form.module.css';
 
 class SignupForm extends React.Component {
   constructor(props) {
@@ -31,7 +31,6 @@ class SignupForm extends React.Component {
       .then((res) => console.log(res))
       .catch(console.log)
   }
-
 
   render() {
     const { firstName, lastName, email, password, matchingPassword } = this.state;
@@ -92,7 +91,6 @@ class SignupForm extends React.Component {
             </div>
             <button type="submit" value="submit">Sign up</button>
           </form>
-
         </div>
       </main>
     )

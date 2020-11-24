@@ -3,8 +3,8 @@ import HomePage from './components/HomePage';
 import ProductShow from './components/ProductShow';
 import UserIndex from './components/UserIndex';
 import UserShow from "./components/UserShow";
-import SignupForm from "./components/SignUpForm";
-import LogInForm from "./components/LoginForm";
+import SignupForm from "./components/forms/SignUpForm";
+import LogInForm from "./components/forms/LoginForm";
 import Navbar from "./components/NavBar";
 import NoMatch from './components/NoMatch';
 
