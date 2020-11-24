@@ -89,7 +89,9 @@ class SignupForm extends React.Component {
                 onChange={this.handleChange("matchingPassword")}
               />
             </div>
-            <button type="submit" value="submit">Sign up</button>
+            <button type="submit" value="submit" className={styles.submit}>
+              Sign up
+            </button>
           </form>
         </div>
       </main>

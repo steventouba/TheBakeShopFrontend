@@ -48,7 +48,9 @@ function LogInForm() {
               onChange={event => setPassword(event.target.value)}
             />
           </div>
-          <button type="submit">login</button>
+          <button type="submit" className={styles.submit}>
+            login
+          </button>
         </form>
       </div>
     </main>
