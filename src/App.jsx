@@ -6,7 +6,7 @@ import UserShow from "./components/UserShow";
 import SignupForm from "./components/forms/SignUpForm";
 import LogInForm from "./components/forms/LoginForm";
 import Navbar from "./components/NavBar";
-import NoMatch from './components/NoMatch';
+import ErrorPage from './components/NoMatch';
 
 function App() {
   return (
@@ -19,7 +19,7 @@ function App() {
         <Route path="/users" exact component={UserIndex} />
         <Route path="/login" exact component={LogInForm} />
         <Route path="/signUp" exact component={SignupForm} />
-        <Route component={NoMatch} />
+        <Route component={ErrorPage} />
       </Switch>
     </div>
   );

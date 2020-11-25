@@ -1,0 +1,19 @@
+.wrapper {
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  top: 40%; 
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.container > img {
+  max-width: 100%;
+  height: auto;
+}
+
+.container > p {
+  text-align: center;
+}
