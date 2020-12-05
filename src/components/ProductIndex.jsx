@@ -17,7 +17,7 @@ function ProductIndex() {
         products.map(product => (
           <div key={product.id} className={styles.card}>
             <Link to={`/products/${product.id}`}>
-              <img src={product.resources.image} alt="Image goes here"/>
+              <img src={product.resources.image} alt=""/>
                <h3>{product.name}</h3>
             </Link>
           </div>
