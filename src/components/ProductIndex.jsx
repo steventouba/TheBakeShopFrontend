@@ -15,12 +15,12 @@ function ProductIndex() {
     <ul className={styles.gallery__list}>
       {
         products.map(product => (
-          <li key={product.id} className={styles.card}>
+          <div key={product.id} className={styles.card}>
             <Link to={`/products/${product.id}`}>
-              <img src="" alt="Image goes here"/>
+              <img src={product.resources.image} alt="Image goes here"/>
                <h3>{product.name}</h3>
             </Link>
-          </li>
+          </div>
         ))
       }
     </ul>
